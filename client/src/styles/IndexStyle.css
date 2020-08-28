@@ -1,0 +1,11 @@
+.btn {
+    color: white;
+    background: #C81D25;
+    padding: 12px;
+    border-radius: 6px;
+    outline: none;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 23px;
+    border: 0px;
+    cursor: pointer;
+}

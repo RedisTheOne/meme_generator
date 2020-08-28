@@ -1,0 +1,20 @@
+.home-container {
+    width: 80vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: 100vh;
+    color: white;
+    font-family: 'Russo One';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-container a {
+    margin-top: 10px;
+    text-decoration: none;
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}

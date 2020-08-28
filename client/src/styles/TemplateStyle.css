@@ -1,0 +1,72 @@
+.template-container {
+    width: 80vw;
+    margin: auto;
+    padding-bottom: 60px;
+    padding-top: 109px;
+    display: flex;
+}
+
+.template-container .container-a {
+    width: 500px;
+}
+
+.template-container .container-a img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.template-container .container-b {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.template-container .container-b .fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.template-container .container-b .fields .field input {
+    width: 96%;
+    padding: 6px;
+    font-size: 22px;
+    background: transparent;
+    outline: none;
+    color: white;
+    border: 1px solid white;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    font-family: 'Londrina Solid';
+    border-radius: 6px;
+}
+
+.template-container .container-b .fields .field label {
+    font-size: 18px;
+    font-family: 'Russo One';
+}
+
+@media(max-width: 1000px) {
+    .template-container .container-a {
+        width: 350px;
+    }
+}
+
+@media(max-width: 900px) {
+    .template-container .container-a {
+        width: 300px;
+    }
+}
+
+@media(max-width: 700px) {
+    .template-container .container-a {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .template-container .container-b {
+        margin-left: 0px;
+    }
+
+    .template-container {
+        flex-direction: column;
+    }
+}

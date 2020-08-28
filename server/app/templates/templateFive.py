@@ -1,16 +1,26 @@
+# {
+#    "template": "templateFive" ,
+#    "firstText": "Sample Text",
+#    "secondText": "Sample Text"
+# }
+
 from PIL import Image, ImageDraw, ImageFont
 import uuid
+from app.templates.inc import checkIfTempFolderExists
 
-def drawTemplateOne(firstText, secondText):
+def drawTemplateFive(firstText, secondText):
+    #CHECK IF TEMPLATE FOLDER IS CREATED
+    checkIfTempFolderExists()
+
     #LOAD THE IMAGE, AND GET THE DIMENSIONS
-    img = Image.open('assets/template1.png')
+    img = Image.open('assets/template5.jpg')
     imgWidth, imgHeight = img.size
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("font_family.ttf", 50)
+    font = ImageFont.truetype("font_family.ttf", 40)
     
     #DRAW THE FIRST TEXT
     firstTextWidth, firstTextHeight = draw.textsize(firstText, font=font)
-    isValid = firstTextWidth < imgWidth / 2
+    isValid = firstTextWidth < (imgWidth / 2) - 20
     index = 2
     while isValid == False:
         splitedFirstText = firstText.split()
@@ -26,12 +36,12 @@ def drawTemplateOne(firstText, secondText):
                 secondIndex += 1 
         index += 1  
         firstTextWidth, firstTextHeight = draw.textsize(firstText, font=font)
-        isValid = firstTextWidth < imgWidth / 2
-    draw.text(((imgWidth / 2), ((imgHeight / 4)) - (firstTextHeight / 2)), firstText, fill="black", font=font)
+        isValid = firstTextWidth < (imgWidth / 2) - 20
+    draw.text(((imgWidth / 2 + 10), ((imgHeight / 3.5)) - (firstTextHeight / 2)), firstText, fill="black", font=font)
 
     #DRAW THE SECOND TEXT
     secondTextWidth, secondTextHeight = draw.textsize(secondText, font=font)
-    isValid = secondTextWidth < imgWidth / 2
+    isValid = secondTextWidth < (imgWidth / 2) - 20
     index = 2
     while isValid == False:
         splitedSecondText = secondText.split()
@@ -47,12 +57,10 @@ def drawTemplateOne(firstText, secondText):
                 secondIndex += 1 
         index += 1  
         secondTextWidth, secondTextHeight = draw.textsize(secondText, font=font)
-        isValid = secondTextWidth < imgWidth / 2
-    draw.text(((imgWidth / 2), ((imgHeight / 1.35)) - (secondTextHeight / 2)), secondText, fill="black", font=font)
+        isValid = secondTextWidth < (imgWidth / 2) - 20
+    draw.text(((imgWidth / 2 + 10), ((imgHeight / 1.32)) - (secondTextHeight / 2)), secondText, fill="black", font=font)
 
     #SAVE THE IMAGE
     randomName = str(uuid.uuid4())
     img.save(f"temp/{randomName}.png", "PNG")
-    print(f"[IMAGE SAVED] ./temp/{randomName}.png")
-
-drawTemplateOne("Finding a new girlfriend", "Beating my meat every night")
+    return randomName + ".png"

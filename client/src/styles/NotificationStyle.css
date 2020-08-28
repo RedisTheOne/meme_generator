@@ -1,0 +1,25 @@
+.notification {
+    position: fixed;
+    background: white;
+    bottom: 10px;
+    right: 10px;
+    color: black;
+    padding: 12px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    transition: .4s;
+}
+
+.notification .container-a {
+    text-align: right;
+}
+
+.notification .container-a i {
+    cursor: pointer;
+}
+
+.notification .container-b p {
+    font-size: 22px;
+}
